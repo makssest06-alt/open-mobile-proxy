@@ -17,6 +17,7 @@ web_modules/
 dist/
 build/
 *.apk
+!OpenMobileProxy.apk
 *.aab
 
 # Local Environment Variables & Secrets

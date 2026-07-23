@@ -1,11 +1,21 @@
+<p align="center">
+  <img src="assets/banner.png" alt="OpenMobileProxy Banner" width="100%" style="border-radius: 12px;" />
+</p>
+
 # 📱 OpenMobileProxy
 
-> **Open-Source Mobile Proxy System** — превратите старый смартфон Android в приватный мобильный прокси-сервер с поддержкой SOCKS5, удаленной смены IP и удобной веб-панелью управления.
+> **Open-Source Mobile Proxy System** — превратите любой смартфон Android в приватный мобильный прокси-сервер с поддержкой SOCKS5, удаленной смены IP и удобной веб-панелью управления.
 
 [![Node.js](https://img.shields.io/badge/Node.js-v18%2B-green.svg)](https://nodejs.org)
 [![Kotlin](https://img.shields.io/badge/Kotlin-Android-blue.svg)](https://kotlinlang.org)
 [![React](https://img.shields.io/badge/React-v18-cyan.svg)](https://react.dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+<p align="center">
+  <a href="https://github.com/makssest06-alt/open-mobile-proxy/raw/main/OpenMobileProxy.apk">
+    <img src="https://img.shields.io/badge/📥_Скачать_готовый_APK-OpenMobileProxy.apk-2ea44f?style=for-the-badge&logo=android" alt="Download APK" />
+  </a>
+</p>
 
 ---
 
@@ -40,62 +50,56 @@
 
 ---
 
-## 🚀 Быстрый старт (Установка Сервера)
+## 📱 Быстрая установка на Android (Без сборки исходников)
 
-### Вариант A. Локальный запуск или деплой на VPS через Node.js
+Больше не нужно собирать проект в Android Studio! Готовый скомпилированный APK уже находится в репозитории:
 
-1. **Клонируйте репозиторий**:
-   ```bash
-   git clone https://github.com/your-username/open-mobile-proxy.git
-   cd open-mobile-proxy
-   ```
-
-2. **Установите зависимости**:
-   ```bash
-   npm install
-   ```
-
-3. **Создайте файл конфигурации `.env`**:
-   ```bash
-   cp .env.example .env
-   ```
-
-4. **Запустите сервер в режиме разработки или продакшна**:
-   ```bash
-   # Запуск веб-панели и прокси-сервера
-   npm run dev
-   ```
-   Веб-панель будет доступна по адресу `http://localhost:3000` (логин по умолчанию: `admin`, пароль: `admin`).
+1. **Скачайте готовый APK**:
+   👉 **[Скачать OpenMobileProxy.apk](https://github.com/makssest06-alt/open-mobile-proxy/raw/main/OpenMobileProxy.apk)** на ваш смартфон.
+2. **Установите приложение**:
+   - Нажмите на скачанный файл и подтвердите установку (разрешите установку из неизвестных источников при запросе системы).
+3. **Подключите к вашему VPS**:
+   - Откройте приложение **OpenMobileProxy**.
+   - Укажите URL вашего VPS (например: `http://217.114.8.131:3000`).
+   - Нажмите **Запустить сервис**.
+4. *(Опционально для авто-смены IP)*:
+   - Включите разрешение для **Службы специальных возможностей (Accessibility Service)**, когда приложение запросит его.
 
 ---
 
-### Вариант B. Автоматический деплой на VPS через SSH
+## 🚀 Быстрый старт (Установка Сервера на VPS)
 
-Если у вас есть чистый VPS (Ubuntu 20.04+ / Debian 11+):
+### Вариант A. Автоматический деплой на VPS через SSH (Рекомендуется)
 
-1. Укажите IP-адрес и SSH-пароль вашего VPS в файле `.env`:
+1. Клонируйте репозиторий на ваш ПК:
+   ```bash
+   git clone https://github.com/makssest06-alt/open-mobile-proxy.git
+   cd open-mobile-proxy
+   ```
+
+2. Укажите IP-адрес и SSH-пароль вашего VPS в файле `.env`:
    ```env
-   VPS_HOST=217.114.8.131
+   VPS_HOST=your_vps_ip
    VPS_USER=root
    VPS_PASS=your_vps_ssh_password
    ```
 
-2. Запустите автоматический деплой:
+3. Запустите автоматический деплой:
    ```bash
    npx tsx deploy.ts
    ```
-Скрипт автоматически настроит фаервол, загрузит исходный код, установит зависимости, соберет проект и запустит сервис под управлением `PM2`.
+Скрипт автоматически настроит фаервол, загрузит проект, установит зависимости и запустит сервис под управлением `PM2`.
 
 ---
 
-## 📱 Установка Android Приложения
+### Вариант B. Локальный запуск на Node.js
 
-1. Откройте проект в **Android Studio** в папке `android/`.
-2. Соберите APK файл (`./gradlew assembleDebug`) или установите приложение на телефон через USB (`./gradlew installDebug`).
-3. Откройте приложение **OpenMobileProxy** на смартфоне:
-   - Введите URL вашего VPS (например: `http://217.114.8.131:3000`).
-   - Нажмите **Запустить сервис**.
-4. *(Опционально)* Для автоматического переключения IP включайте доступ к **Службе специальных возможностей (Accessibility Service)** при запросе приложения.
+```bash
+npm install
+cp .env.example .env
+npm run dev
+```
+Веб-панель будет доступна по адресу `http://localhost:3000` (логин: `admin`, пароль: `admin`).
 
 ---
 
