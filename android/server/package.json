@@ -1,0 +1,12 @@
+{
+  "name": "openmobileproxy-vps",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VPS relay server for OpenMobileProxy",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ws": "^8.16.0"
+  }
+}

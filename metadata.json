@@ -1,0 +1,6 @@
+{
+  "name": "Open Mobile Proxy",
+  "description": "Android mobile proxy server backend and controller",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

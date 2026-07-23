@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.OpenMobileProxy" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/cyan_accent</item>
+        <item name="colorPrimaryVariant">@color/cyan_dim</item>
+        <item name="colorOnPrimary">@color/black</item>
+        
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/green_success</item>
+        <item name="colorSecondaryVariant">@color/green_dim</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <!-- Backgrounds & Surfaces -->
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="colorSurface">@color/surface_dark</item>
+        
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    </style>
+</resources>

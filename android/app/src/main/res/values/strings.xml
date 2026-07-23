@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">OpenMobileProxy</string>
+    <string name="accessibility_description">Helper for toggling airplane mode to rotate IP.</string>
+</resources>

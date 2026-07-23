@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <!-- Top Custom Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OPEN MOBILE PROXY"
+                android:textColor="@color/cyan_accent"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.08" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Шлюз Мобильный-в-VPS"
+                android:textColor="@color/fg_muted"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp"
+                android:letterSpacing="0.02" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_menu_share"
+            android:contentDescription="Proxy Gateway Icon"
+            app:tint="@color/cyan_accent" />
+    </LinearLayout>
+
+    <!-- Configuration Card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/card_bg"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="НАСТРОЙКА СОЕДИНЕНИЯ"
+            android:textColor="@color/fg_muted"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.08"
+            android:layout_marginBottom="12dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="URL-адрес VPS сервера"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/cyan_accent"
+            app:hintTextColor="@color/cyan_accent"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:placeholderText="http://vps-ip:3000"
+            app:placeholderTextColor="@color/fg_muted"
+            android:textColorHint="@color/fg_muted">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etServerUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textUri"
+                android:textColor="@color/fg_white"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="ID устройства"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/cyan_accent"
+            app:hintTextColor="@color/cyan_accent"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:placeholderText="например, phone-proxy-1"
+            app:placeholderTextColor="@color/fg_muted"
+            android:textColorHint="@color/fg_muted">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDeviceId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/fg_white"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <!-- Accessibility Status Warning Banner -->
+    <LinearLayout
+        android:id="@+id/layoutA11yWarning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/card_warning"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvA11yStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚠️ Служба спец. возможностей НЕ включена. Ротация IP работать не будет!"
+            android:textColor="@color/orange_warning"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:letterSpacing="0.01" />
+
+        <Button
+            android:id="@+id/btnEnableA11y"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Предоставить разрешение"
+            android:textAllCaps="false"
+            android:textColor="@color/orange_warning"
+            android:textStyle="bold"
+            android:background="@drawable/card_warning"
+            android:backgroundTint="#1FFFAD00"
+            app:backgroundTint="#1FFFAD00"
+            android:minHeight="44dp" />
+    </LinearLayout>
+
+    <!-- Accessibility OK Banner -->
+    <LinearLayout
+        android:id="@+id/tvA11yOk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/card_success"
+        android:padding="14dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚡ Помощник спец. возможностей активен (ротация IP готова)"
+            android:textColor="@color/green_success"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:letterSpacing="0.01" />
+    </LinearLayout>
+
+    <!-- Main Toggle and Status Panel -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/card_bg"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btnStartStop"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Запустить прокси"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.04"
+            android:background="@drawable/btn_primary"
+            app:backgroundTint="@null"
+            android:stateListAnimator="@null" />
+
+        <!-- Status view -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Статус: Ожидание"
+            android:textColor="@color/fg_white"
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:letterSpacing="0.02" />
+    </LinearLayout>
+
+    <!-- Live Logs Terminal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ЛОГИ В РЕАЛЬНОМ ВРЕМЕНИ"
+            android:textColor="@color/fg_muted"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.08"
+            android:layout_marginBottom="8dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/console_bg"
+            android:fadeScrollbars="false"
+            android:scrollbarThumbVertical="@color/border_dark">
+
+            <TextView
+                android:id="@+id/tvLogs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:text="Консоль готова. Ожидание подключения..."
+                android:textColor="#C1C7D6"
+                android:fontFamily="monospace"
+                android:textSize="11sp"
+                android:lineSpacingMultiplier="1.2" />
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: open-mobile-proxy
+    restart: always
+    network_mode: host
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      - ADMIN_USER=${ADMIN_USER:-admin}
+      - ADMIN_PASS=${ADMIN_PASS:-admin}
+      - JWT_SECRET=${JWT_SECRET:-secret_jwt_key_open_mobile_proxy}
+      - REGISTER_SECRET=${REGISTER_SECRET:-default-register-secret}
+    volumes:
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

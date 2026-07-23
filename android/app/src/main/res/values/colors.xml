@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Theme Colors matching OpenMobileProxy UI -->
+    <color name="bg_dark">#0B0F19</color>
+    <color name="surface_dark">#111827</color>
+    <color name="surface_secondary">#1F2937</color>
+    <color name="border_dark">#374151</color>
+    <color name="fg_white">#F9FAFB</color>
+    <color name="fg_muted">#9CA3AF</color>
+    
+    <!-- Neon Emerald Accent -->
+    <color name="cyan_accent">#10B981</color>
+    <color name="cyan_dim">#059669</color>
+    <color name="accent_emerald">#10B981</color>
+    <color name="accent_dim">#059669</color>
+    <color name="green_success">#10B981</color>
+    <color name="green_dim">#047857</color>
+    <color name="orange_warning">#F59E0B</color>
+    <color name="red_error">#EF4444</color>
+    
+    <!-- Containers -->
+    <color name="bg_warning">#271E0B</color>
+    <color name="bg_success">#062D1F</color>
+    <color name="bg_accent_dim">#15201A</color>
+    
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
