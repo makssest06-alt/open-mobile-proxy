@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="assets/banner.png" alt="OpenMobileProxy Banner" width="100%" style="border-radius: 12px;" />
-</p>
-
 # 📱 OpenMobileProxy
 
 > **Open-Source Mobile Proxy System** — превратите любой смартфон Android в приватный мобильный прокси-сервер с поддержкой SOCKS5, удаленной смены IP и удобной веб-панелью управления.
