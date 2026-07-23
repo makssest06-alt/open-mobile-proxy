@@ -73,6 +73,20 @@
 
 ---
 
+## 📸 Скриншоты Интерфейса
+
+<p align="center">
+  <b>Веб-панель управления (Node.js & React Dashboard)</b><br/>
+  <img src="assets/web_dashboard.png" alt="Веб-панель управления OpenMobileProxy" width="100%" style="border-radius: 10px; margin-top: 8px; margin-bottom: 24px;" />
+</p>
+
+<p align="center">
+  <b>Мобильное приложение (Android App на Kotlin)</b><br/>
+  <img src="assets/mobile_app.png" alt="Приложение OpenMobileProxy для Android" width="300px" style="border-radius: 16px; margin-top: 8px;" />
+</p>
+
+---
+
 ## 🛠 Инструкция по установке
 
 ### Этап 1: Установка сервера (VPS)
